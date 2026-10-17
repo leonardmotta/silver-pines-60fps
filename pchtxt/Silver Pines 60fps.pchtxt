@@ -1,0 +1,12 @@
+@nsobid-91046036F8850DE3EC306056FCC6BA1200000000000000000000000000000000
+
+@flag offset_shift 0x100
+
+[Silver Pines 60fps]
+@enabled
+01B8F9A0 80078052 // Application.targetFrameRate = 30 -> mov w0, #60
+0320BD90 80078052 // Application.targetFrameRate = 30 (2nd call) -> mov w0, #60
+00B6F1C8 28008052 // present interval from QualitySettings.vSyncCount -> mov w8, #1
+00B7770C 21008052 // vsync interval setter -> mov w1, #1
+00B882B0 21008052 // nvnWindowBuilderSetPresentInterval arg -> mov w1, #1
+@stop
